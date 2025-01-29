@@ -10,7 +10,7 @@ app.listen(8080, () => {
 });
 
 app.get("/", function (req, res) {
-    res.json ({message:"this is the root route."};)
+    res.json ({message:"this is the root route."});
 });
 
 app.get("/readroute", async (req, res) => {
