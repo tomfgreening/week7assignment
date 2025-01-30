@@ -14,19 +14,18 @@ app.get("/", function (req, res) {
 });
 
 app.get("/readroute", async (req, res) => {
-    const result = await db.query("SELECT * FROM {tablenamehere}");
+    const result = await db.query("SELECT * FROM {JJguestbook}");
     res.json(result.rows);
 });
 
 app.post("/createtableEntry", (req, res) => {
     const newData = req.body;
     const query = db.query (
-        'INSERT INTO {tablenamehere} (column name, 2 ,3 ,4) VALUES ($1, $2, $3, $4) RETURNING *',
+        'INSERT INTO {JJguestbook} (name, date_of_visit, comments) VALUES ($1, $2, $3) RETURNING *',
         {
-            newData.,
-            newData.,
-            newData.,
-            newData.,
+            newData.name,
+            newData.date_of_visit,
+            newData.comments,
         }
     );
     res.json({ message: "Data sent to the database!" });
