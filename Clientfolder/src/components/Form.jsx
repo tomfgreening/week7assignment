@@ -6,6 +6,7 @@ export default function Form() {
     date_of_visit: "",
     comments:"",
   });
+  }
 
   function handleChangeFormValues(event) {
     setFormValues({
@@ -15,11 +16,9 @@ export default function Form() {
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
-
-  
+function handleSubmit(event) {
+  event.preventDefault();
+  fetch("http://localhost:8080/createtableEntry")
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="name">name:</label>
@@ -40,7 +39,7 @@ export default function Form() {
       value={formValues.date_of_visit}
       onChange={handleChangeFormValues}
       />
-      <label htmlFor="comments">comments</label>
+      <label htmlFor="comments">comments:</label>
       <input 
       type="text"
       id="comments" 
@@ -52,4 +51,7 @@ export default function Form() {
       <button type="submit">Submit</button>
     </form>
   );
+}
+  
+  
 }
