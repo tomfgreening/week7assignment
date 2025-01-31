@@ -22,11 +22,11 @@ app.post("/createtableEntry", (req, res) => {
     const newData = req.body;
     const query = db.query (
         'INSERT INTO {JJguestbook} (name, date_of_visit, comments) VALUES ($1, $2, $3) RETURNING *',
-        {
-            newData.name,
+        [
+            newData.guestName,
             newData.date_of_visit,
             newData.comments,
-        }
+    ]
     );
     res.json({ message: "Data sent to the database!" });
     //   res.json(query.rows);
