@@ -33,7 +33,22 @@ export default function Form() {
       />
       <label htmlFor="date_of_visit">date of visit:</label>
       <input
-      type
+      type="date"
+      id="date_of_visit"
+      name="date_of_visit"
+      placeholder="When did you visit?"
+      value={formValues.date_of_visit}
+      onChange={handleChangeFormValues}
+      />
+      <label htmlFor="comments">comments</label>
+      <input 
+      type="text"
+      id="comments" 
+      name="comments"
+      placeholder="How was your experience?" 
+      value={formValues.comments}
+      onChange={handleChangeFormValues}
+      />
       <button type="submit">Submit</button>
     </form>
   );
