@@ -1,7 +1,20 @@
 import { useState } from "react";
 
 export default function Form() {
-  const [username, setUsername] = useState("");
+  const [formValues, setFormValues] = useState({
+    name: "",
+    date_of_visit: "",
+    comments:"",
+  });
+
+  function handleChangeFormValues(event) {
+    setFormValues({
+      ...
+      formValues,
+      [event.target.name]: event.target.value,
+    });
+  }
+  
   function handleSubmit(event) {
     event.preventDefault();
   }
