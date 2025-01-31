@@ -14,24 +14,26 @@ export default function Form() {
       [event.target.name]: event.target.value,
     });
   }
-  
+
   function handleSubmit(event) {
     event.preventDefault();
   }
-  function handleInputChange(event) {
-    setUsername(event.target.value);
-  }
 
+  
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
+      <label htmlFor="name">name:</label>
       <input
         type="text"
-        id="username"
-        name="username"
-        value={username}
-        onChange={handleInputChange}
+        id="name"
+        name="name"
+        placeholder="What is your name?"
+        value={formValues.name}
+        onChange={handleChangeFormValues}
       />
+      <label htmlFor="date_of_visit">date of visit:</label>
+      <input
+      type
       <button type="submit">Submit</button>
     </form>
   );
