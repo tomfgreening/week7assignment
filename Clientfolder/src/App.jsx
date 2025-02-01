@@ -9,7 +9,7 @@ import Form from "./components/Form";
 export default function App() {
   return (
     <>
-      <h1> Project </h1>
+      <h1> Juicy Jakes </h1>
       <Header />
       <Routes>
         <Route element={<About />} path={"/about"} />
