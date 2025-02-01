@@ -20,7 +20,7 @@ app.get("/readroute", async (req, res) => {
 
 app.post("/createtableEntry", async (req, res) => {
   console.log("Received data:", req.body);
-//   line 23 is a debugging step to see if the data is actually being sent, it is! I can see the line 22 message in the server terminal. 
+  //   line 23 is a debugging step to see if the data is actually being sent, it is! I can see the line 22 message in the server terminal.
   const newData = req.body;
   const query = await db.query(
     "INSERT INTO jjguestbook (name, date_of_visit, comments) VALUES ($1, $2, $3) RETURNING *",
@@ -28,3 +28,4 @@ app.post("/createtableEntry", async (req, res) => {
   );
   res.json(query.rows);
 });
+
