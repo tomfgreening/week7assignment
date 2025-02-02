@@ -2,7 +2,17 @@ import { useState, useEffect } from "react";
 export default function DatabaseEntries() {
   const [entries, setEntries] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/readroute");
+    async function fetchEntries () {
+        try {
+            const response = await fetch ("http://localhost:8080/readroute");
+            const data = await response.json();
+            setEntries(data);
+        } catch (error) {
+            console.error("Unable to fetch entries:", error);
+        }
+    }
+    fetchEntries();
+}, []);
   });
 }
 
