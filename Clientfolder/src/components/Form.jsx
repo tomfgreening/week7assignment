@@ -17,7 +17,6 @@ export default function Form() {
   function handleSubmit(event) {
     event.preventDefault();
     console.log("The data has been sent successfully");
-    // line 19 is a debugging step. I can see the above message in the console when I click submit on the client form.
     fetch("http://localhost:8080/createtableEntry", {
       method: "POST",
       headers: {
