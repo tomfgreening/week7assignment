@@ -2,7 +2,6 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import DatabaseEntries from "./components/Databaseentries.jsx";
@@ -21,8 +20,6 @@ export default function App() {
       </div>
       <Form />
       <DatabaseEntries />
-
-      <Footer />
     </>
   );
 }
