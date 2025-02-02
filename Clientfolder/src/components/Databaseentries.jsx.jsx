@@ -18,7 +18,14 @@ export default function DatabaseEntries() {
 return (
     <div>
         <h1>Guestbook Entires</h1>
-        <ul></ul>
+        <ul>
+            {entires.map((entry)=>(
+                <li key={entry.id}</li>
+                <li name={entry.name}</li>
+                <li date_of_visit={entry.date_of_visit}
+                <li comments={entry.comments}
+            ) )}
+        </ul>
     </div>
 )
 
