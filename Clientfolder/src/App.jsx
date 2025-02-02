@@ -5,6 +5,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Form from "./components/Form";
+import DatabaseEntries from "./components/Databaseentries.jsx";
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
         <h3>We hope you enjoyed your visit to Juicy Jake's vegan returant! Please use the form below to sign our guestbook.</h3>
       </div>
       <Form />
+      <DatabaseEntries />
+
       <Footer />
     </>
   );
